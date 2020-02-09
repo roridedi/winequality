@@ -1,6 +1,6 @@
 ## LAB 1
 
-###Prerequisites
+##Prerequisites
 1. Python
 2. Pythorch
 3. sklearn
@@ -29,6 +29,10 @@ Purpose of DataScience
 The purpose of datascience is to make use of data and generate inferences in order to make better informed decisions.
 - The ability to take data — to be able to understand it, to process it, to extract value from it, to visualize it, to communicate it — that’s going to be a hugely important skill in the next decades.”
 Hal Varian
+
+The Data Science Life Cycle
+![DataScience Life Cycle](https://cdn3.datascience.berkeley.edu/content/0be56de3069740669fe2d696fb60220e/DataScienceLifeCycle.jpg)
+
 
 Using Python & Tools
 
