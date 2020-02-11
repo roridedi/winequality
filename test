@@ -1,1 +1,36 @@
-{\r\n   \"apiVersion\": \"[variables('apiVersion')]\",\r\n   \"name\": \"AutoForwardSourceTopic\",\r\n   \"type\": \"topics\",\r\n   \"dependsOn\": [\r\n     \"[concat('Microsoft.ServiceBus\/namespaces\/',parameters('ns-rahman'))]\",\r\n     \"AutoForwardTargetQueue\",],\"properties\": {},\"resources\": [   {\r\n       \"apiVersion\": \"[variables('apiVersion')]\",\r\n       \"name\": \"Forwarder\",\r\n       \"type\": \"subscriptions\",\r\n       \"dependsOn\": [ \"AutoForwardSourceTopic\" ],\r\n       \"properties\": {\r\n         \"forwardTo\": \"AutoForwardTargetQueue\"\r\n       },\r\n       \"resources\": []\r\n     }\r\n   ]\r\n},\r\n{\r\n   \"apiVersion\": \"[variables('apiVersion')]\",\r\n   \"name\": \"AutoForwardTargetQueue\",\r\n   \"type\": \"queues\",\r\n   \"dependsOn\": [\r\n     \"[concat('Microsoft.ServiceBus\/namespaces\/',\r\n            parameters('ns-rahman'))]\",\r\n   ],\r\n   \"properties\": {},\r\n   \"resources\": []\r\n        }\r\n      ]\r\n    }\r\n
+{
+   "apiVersion": "[variables('apiVersion')]",
+   "name": "AutoForwardSourceTopic",
+   "type": "topics",
+   "dependsOn": [
+     "[concat('Microsoft.ServiceBus/namespaces/', 
+            parameters('serviceBusNamespaceName'))]",
+     "AutoForwardTargetQueue",
+   ],
+   "properties": {},
+   "resources": [
+     {
+       "apiVersion": "[variables('apiVersion')]",
+       "name": "Forwarder",
+       "type": "subscriptions",
+       "dependsOn": [ "AutoForwardSourceTopic" ],
+       "properties": {
+         "forwardTo": "AutoForwardTargetQueue"
+       },
+       "resources": []
+     }
+   ]
+},
+{
+   "apiVersion": "[variables('apiVersion')]",
+   "name": "AutoForwardTargetQueue",
+   "type": "queues",
+   "dependsOn": [
+     "[concat('Microsoft.ServiceBus/namespaces/', 
+            parameters('serviceBusNamespaceName'))]",
+   ],
+   "properties": {},
+   "resources": []
+        }
+      ]
+    }
