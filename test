@@ -3,8 +3,7 @@
    "name": "AutoForwardSourceTopic",
    "type": "topics",
    "dependsOn": [
-     "[concat('Microsoft.ServiceBus/namespaces/',
-            parameters('ns-rahman'))]",
+     "[concat('Microsoft.ServiceBus/namespaces/',parameters('ns-rahman'))]",
      "AutoForwardTargetQueue",
    ],
    "properties": {},
