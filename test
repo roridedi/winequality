@@ -4,8 +4,7 @@
    "type": "topics",
    "dependsOn": [
      "[concat('Microsoft.ServiceBus/namespaces/',parameters('ns-rahman'))]",
-     "AutoForwardTargetQueue",],"properties": {},
-   "resources": [   {
+     "AutoForwardTargetQueue",],"properties": {},"resources": [   {
        "apiVersion": "[variables('apiVersion')]",
        "name": "Forwarder",
        "type": "subscriptions",
