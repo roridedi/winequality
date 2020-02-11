@@ -3,8 +3,8 @@
    "name": "AutoForwardSourceTopic",
    "type": "topics",
    "dependsOn": [
-     "[concat('Microsoft.ServiceBus/nsrahman/', 
-            parameters('serviceBusNamespaceName'))]",
+     "[concat('Microsoft.ServiceBus/namespaces/', 
+            parameters('ns-rahman'))]",
      "AutoForwardTargetQueue",
    ],
    "properties": {},
@@ -27,7 +27,7 @@
    "type": "queues",
    "dependsOn": [
      "[concat('Microsoft.ServiceBus/namespaces/', 
-            parameters('serviceBusNamespaceName'))]",
+            parameters('ns-rahman'))]",
    ],
    "properties": {},
    "resources": []
