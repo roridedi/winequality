@@ -1,0 +1,36 @@
+{
+   "apiVersion": "[variables('apiVersion')]",
+   "name": "AutoForwardSourceTopic",
+   "type": "topics",
+   "dependsOn": [
+     "[concat('Microsoft.ServiceBus/namespaces/', 
+            parameters('serviceBusNamespaceName'))]",
+     "AutoForwardTargetQueue",
+   ],
+   "properties": {},
+   "resources": [
+     {
+       "apiVersion": "[variables('apiVersion')]",
+       "name": "Forwarder",
+       "type": "subscriptions",
+       "dependsOn": [ "AutoForwardSourceTopic" ],
+       "properties": {
+         "forwardTo": "AutoForwardTargetQueue"
+       },
+       "resources": []
+     }
+   ]
+},
+{
+   "apiVersion": "[variables('apiVersion')]",
+   "name": "AutoForwardTargetQueue",
+   "type": "queues",
+   "dependsOn": [
+     "[concat('Microsoft.ServiceBus/namespaces/', 
+            parameters('serviceBusNamespaceName'))]",
+   ],
+   "properties": {},
+   "resources": []
+        }
+      ]
+    }
